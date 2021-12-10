@@ -1,5 +1,6 @@
 <?php
     include('validalogin.php');
+    //praticamente todo o sistema foi desenhado com boostrap. 
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -43,6 +44,7 @@
       <div class="row">
         <div class="col-lg-12 mt-5">
           <?php
+          // Para sempre manter a navbar, optei por todas as outras pages, depois de logado, serem acessadas por meio do painel, nesse switch que define qual page vai ser usada no momento. 
             include('../config.php'); 
             switch(@$_REQUEST["page"]){
               case "atividades-cadastrar":

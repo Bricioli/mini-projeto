@@ -1,4 +1,5 @@
 <?php
+	// esse é o arquivo que recebe as solicitação de alteração de dados do Banco
 	switch ($_REQUEST["acao"]) {
 		case 'cadastrar':
 			$tarefa     = $_POST["tarefa_atividades"];
@@ -6,11 +7,12 @@
 			$prazo      = $_POST["prazo_atividades"];
 			$descricao  = $_POST["descricao_atividades"];
 			$realizada  = $_POST["realizada_atividades"];	
-			$dia = date("D");
+			//aqui pego a data e hora do sistema pra poder fazer a validação da criação de manutenções urgentes
+			$dia = date("D"); 
 			$hora = date("H");
 
 			if($dia == "Fri" && $hora > 13 && $tipo === "Manutenção Urgente"){
-				print "<script>alert('Não é possivel criar tarefas de manutenção urgente hoje');</script"; 
+				print "<script>alert('Não é possivel criar tarefas de manutenção urgente hoje');</script";  
 			}else{
 				$sql = "INSERT INTO atividades (tarefa_atividades, tipo_atividades, prazo_atividades, descricao_atividades, realizada_atividades) VALUES ('{$tarefa}', '{$tipo}', '{$prazo}', '{$descricao}','{$realizada}')";
 
@@ -32,7 +34,8 @@
 			$prazo      = $_POST["prazo_atividades"];
 			$descricao  = $_POST["descricao_atividades"];
 			$realizada  = $_POST["realizada_atividades"];	
-			$d_tamanho = strlen($descricao);
+			$d_tamanho = strlen($descricao); // tamanho do campo para validar os 50 caracteres
+
 			if(($tipo ==="Manutenção Urgente" || $tipo ==="Atendimento") && $d_tamanho <= 50 && $realizada === "Concluida"){
 				print "<script>alert('Este tipo de tarefa precisa ter mais de 50 caracteres de descrição');</script>";
 			}else{
@@ -51,6 +54,7 @@
 			break;
 
 		case 'excluir':
+			//Pego por aqui o tipo da atividade para tratar se pode excluir ou não
 			$tipo = $_REQUEST['tipo_atividades'];
 
 

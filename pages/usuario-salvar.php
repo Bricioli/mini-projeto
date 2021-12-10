@@ -1,4 +1,5 @@
 <?php
+// para cada usuario dei preferencia para criar uma pagina fora do sistema, para que possa ser acessada sempre, assim podendo ser feito o cadastro sem que necessário. 
 include("../config.php");
 	switch ($_REQUEST["acao"]) {
 		case 'cadastrar':
