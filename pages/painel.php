@@ -9,6 +9,16 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" >
     <link href="../fontawesome/css/all.css" rel="stylesheet">
     <title>Painel do Usuario!</title>
+    <style>
+        #center{
+          background-color: orange;
+          width: 500px;
+          height: 500px;
+          border-radius: 10px;
+          padding: 10%;
+          text-align: center;
+        }
+    </style>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

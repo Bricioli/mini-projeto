@@ -33,7 +33,7 @@
 			$descricao  = $_POST["descricao_atividades"];
 			$realizada  = $_POST["realizada_atividades"];	
 			$d_tamanho = strlen($descricao);
-			if(($tipo ==="Manutenção urgente" || $tipo ==="Atendimento") && $d_tamanho <= 50 && $realizada === "Concluida"){
+			if(($tipo ==="Manutenção Urgente" || $tipo ==="Atendimento") && $d_tamanho <= 50 && $realizada === "Concluida"){
 				print "<script>alert('Este tipo de tarefa precisa ter mais de 50 caracteres de descrição');</script>";
 			}else{
 			$sql = "UPDATE atividades SET tarefa_atividades='{$tarefa}', tipo_atividades='{$tipo}', prazo_atividades='{$prazo}', descricao_atividades='{$descricao}', realizada_atividades='{$realizada}' WHERE id_atividades=".$_POST["id_atividades"];
