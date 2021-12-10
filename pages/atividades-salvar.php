@@ -11,8 +11,9 @@
 			$dia = date("D"); 
 			$hora = date("H");
 
-			if($dia == "Fri" && $hora > 13 && $tipo === "Manutenção Urgente"){
-				print "<script>alert('Não é possivel criar tarefas de manutenção urgente hoje');</script";  
+			if($dia == "Fri" && $hora > 10 && $tipo === "Manutenção Urgente"){
+				print "<script>alert('Não é possivel criar tarefas de manutenção urgente hoje');</script>";
+				print "<script>location.href='?page=atividades-cadastrar';</script>"; 
 			}else{
 				$sql = "INSERT INTO atividades (tarefa_atividades, tipo_atividades, prazo_atividades, descricao_atividades, realizada_atividades) VALUES ('{$tarefa}', '{$tipo}', '{$prazo}', '{$descricao}','{$realizada}')";
 
@@ -38,6 +39,7 @@
 
 			if(($tipo ==="Manutenção Urgente" || $tipo ==="Atendimento") && $d_tamanho <= 50 && $realizada === "Concluida"){
 				print "<script>alert('Este tipo de tarefa precisa ter mais de 50 caracteres de descrição');</script>";
+				print "<script>location.href='?page=atividades-listar';</script>";
 			}else{
 			$sql = "UPDATE atividades SET tarefa_atividades='{$tarefa}', tipo_atividades='{$tipo}', prazo_atividades='{$prazo}', descricao_atividades='{$descricao}', realizada_atividades='{$realizada}' WHERE id_atividades=".$_POST["id_atividades"];
 
@@ -59,7 +61,8 @@
 
 
 			if($tipo === "Manutenção Urgente"){
-				print "<script>alert('Não é possivel excluir esta tarefa');</script"; 
+				print "<script>alert('Não é possivel excluir esta tarefa');</script>";
+				print "<script>location.href='?page=atividades-listar';</script>"; 
 			}else{
 				$sql = "DELETE FROM atividades WHERE id_atividades=".$_REQUEST["id_atividades"];
 

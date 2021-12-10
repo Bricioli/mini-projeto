@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<div class="form-floating mb-3	">
-		<textarea type="text" name="descricao_atividades" class="form-control" id="floatingDescricao" placeholder="Descricao" value="<?php print $row->descricao_atividades; ?>"></textarea>
+		<input type="text" name="descricao_atividades" class="form-control" id="floatingDescricao" placeholder="Descricao" value="<?php print $row->descricao_atividades; ?>">
 		<label for="floatingDescricao">Descrição</label>
 	</div>
 		<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
