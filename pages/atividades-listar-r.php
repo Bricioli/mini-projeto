@@ -49,10 +49,10 @@
 					</button>
 
 					<button class='btn btn-dark' 
-					onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=atividades-salvar&acao=excluir&id_atividades=".$row->id_atividades."';}else{flase;}\">
+					onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=atividades-salvar&acao=excluir&id_atividades=".$row->id_atividades."&tipo_atividades=".$row->tipo_atividades."';}else{flase;}\">
 					<i class=\"fas fa-trash-alt\"></i>
-					</button>
-				   </td>";
+					</button> 
+				   </td>";// aqui no botão de excluir envio o ID e o tipo para verificar se pode ou não ser excluida
 			print "</tr>";
 		}
 		print "</table>";
