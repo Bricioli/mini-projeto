@@ -40,6 +40,12 @@
 					<label for="floatingSenha">Senha</label>
 				</div>
 			</div>
+			<div class="col-md">
+				<div class="form-floating">
+					<input type="email" name="email_usuario" class="form-control" id="floatingEmail" placeholder="E-mail">
+					<label for="floatingSenha">E-mail</label>
+				</div>
+			</div>
 		</div>
 	
 		<div class="d-grid gap-2 d-md-flex justify-content-md-center">
